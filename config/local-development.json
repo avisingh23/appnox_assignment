@@ -1,0 +1,17 @@
+{
+  "app": {
+    "name": "App01",
+    "apiPrefix": "",
+    "port": 3000,
+    "basicAuth": "1234",
+    "mongodb": {
+      "uri": "mongodb://localhost:27017",
+      "db": "typescript-node-boilerplate",
+      "debug": true
+    },
+    "auth": {
+      "secretKey": "cafe551e-44fe-4a89-bbf9-82ffce7c1c49",
+      "expiration": 86400
+    }
+  }
+}

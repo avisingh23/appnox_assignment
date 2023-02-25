@@ -1,0 +1,18 @@
+{
+    "app": {
+        "name": "App01",
+        "apiPrefix": "",
+        "port": 3000,
+        "rpcPort": 3001,
+        "basicAuth": "",
+        "mongodb": {
+            "uri": "mongodb://localhost:27017",
+            "db": "todo",
+            "debug": true
+        },
+        "auth": {
+            "secretKey": "",
+            "expiration": 3600
+        }
+    }
+}

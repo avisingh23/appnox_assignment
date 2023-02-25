@@ -1,0 +1,1316 @@
+{
+	"info": {
+		"_postman_id": "40693276-6159-47e7-a820-e42529ed5f51",
+		"name": "appnox-e-commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16396568"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signup",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "BasicAuth",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"firstname\":\"avnish\",\r\n    \"username\":\"avi01\",\r\n    \"email\":\"avnishtomar87@gmail.com\",\r\n    \"mobile\":\"8305372451\",\r\n    \"password\":\"avi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user/signup",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "signup success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\":\"avi01\",\r\n    \"password\":\"avi\",\r\n    \"emailAddress\":\"akshattomar981@gmail.com\",\r\n    \"mobileNumber\":\"8305372451\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "423"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a7-M7Tg3DTODPDxk1xq+5lDuukiXxM\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Nov 2022 16:30:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": \"avi01\",\n    \"mobile\": {\n        \"countryCode\": 91,\n        \"number\": 8305372451,\n        \"isVerified\": false\n    },\n    \"email\": {\n        \"address\": \"akshattomar981@gmail.com\",\n        \"isVerified\": false\n    },\n    \"about\": null,\n    \"photo\": null,\n    \"device\": null,\n    \"role\": \"user\",\n    \"status\": \"new\",\n    \"otpRequestId\": \"586177\",\n    \"createdBy\": null,\n    \"updatedBy\": null,\n    \"permissions\": [],\n    \"createdAt\": \"2022-11-23T16:30:47.357Z\",\n    \"updatedAt\": \"2022-11-23T16:30:47.357Z\",\n    \"fullName\": null,\n    \"id\": \"637e4ab7bbecb07896f1ced2\"\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"jwt\", pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "BasicAuth",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"avnishtomar87@gmail.com\",\r\n    \"password\":\"avi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"avisingh\",\r\n    \"password\":\"avi\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "450"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c2-gCaVXS94L3IvnPFY3ZeWF/rEMBE\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Nov 2022 12:47:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"637c65f352e8cefdb3490e12\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHRyYXMiOnt9LCJzY29wZSI6W10sImlhdCI6MTY2OTEyMTIyOSwiZXhwIjoxNjY5MjA3NjI5LCJhdWQiOiIiLCJpc3MiOiIiLCJzdWIiOiI2MzdjNjVmMzUyZThjZWZkYjM0OTBlMTIiLCJqdGkiOiI3OTUwODI1NzIyNzM0ZDI0ZThjZTQ1MTk4OWNiOWNiZjgxMDFjOWMwMDRiNjk5MmE0NTEyYTk1MmExNzE4ZGRiIn0.cs7F_PcQUFNMecOxMkiNviZ3nYb6WQD_e8nBSbYinHw\",\n    \"expires\": \"2022-11-23T12:47:09.210Z\",\n    \"now\": \"2022-11-22T12:47:09.210Z\",\n    \"scopes\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "changePassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "BasicAuth",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"currentPassword\":\"avis\",\r\n    \"newPassword\":\"avi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user/63fa16ca60cef8d7d067bff6/change-password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"63fa16ca60cef8d7d067bff6",
+								"change-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "changePassword success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"currentPassword\":\"avi\",\r\n    \"newPassword\":\"avis\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user/change-password/637c65f352e8cefdb3490e12",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"change-password",
+										"637c65f352e8cefdb3490e12"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3e-/tfEYPaMXgyTyGbKQxI2OD6wtbY\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Nov 2022 11:51:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"password changed successfully\"\n}"
+						},
+						{
+							"name": "changePassword failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"currentPassword\":\"avi\",\r\n    \"newPassword\":\"avis\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user/change-password/637c65f352e8cefdb3490e12",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"change-password",
+										"637c65f352e8cefdb3490e12"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"38-0776XaLlKvaYKlfkcIg8TchdzXo\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Nov 2022 11:51:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"failed\",\n    \"message\": \"invalid current password\"\n}"
+						}
+					]
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "BasicAuth",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/user/63fa16ca60cef8d7d067bff6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"63fa16ca60cef8d7d067bff6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getUserById success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/user/637c65f352e8cefdb3490e12",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"637c65f352e8cefdb3490e12"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "384"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"180-aMaQss0ItvY/1n7O7amZRxkk0FQ\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Nov 2022 11:54:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": null,\n    \"username\": \"avi02\",\n    \"mobile\": null,\n    \"email\": {\n        \"address\": \"akshattomar75371@gmail.com\",\n        \"isVerified\": true\n    },\n    \"about\": null,\n    \"photo\": null,\n    \"device\": null,\n    \"role\": \"admin\",\n    \"status\": \"new\",\n    \"otpRequestId\": \"772232\",\n    \"createdBy\": null,\n    \"updatedBy\": null,\n    \"permissions\": [],\n    \"createdAt\": \"2022-11-22T06:02:27.849Z\",\n    \"updatedAt\": \"2022-11-22T11:51:29.911Z\",\n    \"fullName\": null,\n    \"id\": \"637c65f352e8cefdb3490e12\"\n}"
+						},
+						{
+							"name": "getUserById not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/user/637c5fd4507bf19363f64fa3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"637c5fd4507bf19363f64fa3"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-aBLuqpZKqK/bcAOnaCesQBp59rQ\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Nov 2022 11:52:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"error\": \"\",\n    \"errorCode\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "getAllUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "BasicAuth",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getUserById success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/user/637c65f352e8cefdb3490e12",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"637c65f352e8cefdb3490e12"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "384"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"180-aMaQss0ItvY/1n7O7amZRxkk0FQ\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Nov 2022 11:54:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": null,\n    \"username\": \"avi02\",\n    \"mobile\": null,\n    \"email\": {\n        \"address\": \"akshattomar75371@gmail.com\",\n        \"isVerified\": true\n    },\n    \"about\": null,\n    \"photo\": null,\n    \"device\": null,\n    \"role\": \"admin\",\n    \"status\": \"new\",\n    \"otpRequestId\": \"772232\",\n    \"createdBy\": null,\n    \"updatedBy\": null,\n    \"permissions\": [],\n    \"createdAt\": \"2022-11-22T06:02:27.849Z\",\n    \"updatedAt\": \"2022-11-22T11:51:29.911Z\",\n    \"fullName\": null,\n    \"id\": \"637c65f352e8cefdb3490e12\"\n}"
+						},
+						{
+							"name": "getUserById not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/user/637c5fd4507bf19363f64fa3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"637c5fd4507bf19363f64fa3"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-aBLuqpZKqK/bcAOnaCesQBp59rQ\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Nov 2022 11:52:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"error\": \"\",\n    \"errorCode\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "updateUserProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "BasicAuth",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"avisingh01\",\r\n    \"firstname\":\"avnish singh\",\r\n    \"lastname\":\"Tomar\",\r\n    \"about\":\"self motivated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user/63fa16ca60cef8d7d067bff6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"63fa16ca60cef8d7d067bff6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "updateUserProfile success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "userName",
+											"value": "avisingh",
+											"type": "text"
+										},
+										{
+											"key": "about",
+											"value": "self motvated",
+											"type": "text"
+										},
+										{
+											"key": "firstName",
+											"value": "Avnish",
+											"type": "text"
+										},
+										{
+											"key": "lastName",
+											"value": "Tomar",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Avnish Tomar/Pictures/Screenshots/Screenshot (46).png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user/637df677d571b7484eee1bd6",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"637df677d571b7484eee1bd6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "550"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"226-CUTJWdlcWKE3xRfTPx6+AgwrYrI\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Nov 2022 10:35:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": \"avisingh\",\n    \"mobile\": {\n        \"countryCode\": 91,\n        \"number\": 8305372451,\n        \"isVerified\": false\n    },\n    \"email\": {\n        \"address\": \"akshattomar981@gmail.com\",\n        \"isVerified\": false\n    },\n    \"about\": \"self motvated\",\n    \"photo\": {\n        \"id\": \"unknown\",\n        \"url\": \"profile-Screenshot (46)-1669199595645.png\"\n    },\n    \"device\": null,\n    \"role\": \"user\",\n    \"status\": \"new\",\n    \"otpRequestId\": \"359335\",\n    \"createdBy\": null,\n    \"updatedBy\": null,\n    \"permissions\": [],\n    \"createdAt\": \"2022-11-23T10:31:19.226Z\",\n    \"updatedAt\": \"2022-11-23T10:33:15.659Z\",\n    \"name\": {\n        \"first\": \"Avnish\",\n        \"last\": \"Tomar\"\n    },\n    \"fullName\": \"Avnish Tomar\",\n    \"id\": \"637df677d571b7484eee1bd6\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "items",
+			"item": [
+				{
+					"name": "postItem",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "BasicAuth",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"first product\",\r\n    \"description\":\"my items\",\r\n    \"price\":\"5000\",\r\n    \"category\":\"electronic\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/item",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getItemById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "BasicAuth",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/item/63fa1c1f9bf171e52c20d0b1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"item",
+								"63fa1c1f9bf171e52c20d0b1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllItems",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "BasicAuth",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/item",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"item"
+							],
+							"query": [
+								{
+									"key": "price",
+									"value": "5000",
+									"disabled": true
+								},
+								{
+									"key": "category",
+									"value": "electronic",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "first product",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateItemById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "BasicAuth",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"first products\",\r\n    \"description\":\"my item\",\r\n    \"price\":\"50\",\r\n    \"category\":\"grocery\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/item/63fa1c1f9bf171e52c20d0b1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"item",
+								"63fa1c1f9bf171e52c20d0b1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteItemById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "BasicAuth",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"first products\",\r\n    \"description\":\"my item\",\r\n    \"price\":\"500\",\r\n    \"category\":\"electronics\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/item/63f8cff973d81f9279a564f0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"item",
+								"63f8cff973d81f9279a564f0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "postCart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "BasicAuth",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\":\"63fa1c1f9bf171e52c20d0b1\",\r\n    \"quantity\":\"3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cart/63fa16ca60cef8d7d067bff6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cart",
+								"63fa16ca60cef8d7d067bff6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "BasicAuth",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cart/63fa16ca60cef8d7d067bff6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cart",
+								"63fa16ca60cef8d7d067bff6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "BasicAuth",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"first products\",\r\n    \"description\":\"my item\",\r\n    \"price\":\"500\",\r\n    \"category\":\"electronics\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cart/63f8b6df6bf34384fae6a435/63f998b5deff5103fb51ea16",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cart",
+								"63f8b6df6bf34384fae6a435",
+								"63f998b5deff5103fb51ea16"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "checkout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "BasicAuth",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/order/63fa16ca60cef8d7d067bff6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"order",
+								"63fa16ca60cef8d7d067bff6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "BasicAuth",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/order/63f8b6df6bf34384fae6a435",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"order",
+								"63f8b6df6bf34384fae6a435"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
